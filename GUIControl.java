@@ -1,3 +1,5 @@
+package contactslist;
+
 import java.io.IOException;
 import java.io.File;
 import java.nio.file.Files;
@@ -8,18 +10,18 @@ import java.util.stream.Stream;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
+import javafx.scene.Parent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
-// TODO: add Stage.setTitle(), .setScene() .show()
-//System.exit(init) to end a javaFX application
 
 public class GUIControl extends Application{
 
@@ -85,6 +87,7 @@ public class GUIControl extends Application{
 				System.out.println("old Convention");
 
 								
+				//display list of old conventions
 				try {
 					Stream<Path> files = Files.list(Paths.get(
 						"." + File.separator + "Model" + File.separator + 
@@ -92,15 +95,17 @@ public class GUIControl extends Application{
 					files.forEach(System.out::println);
 
 					files.close();
+
+					//open new window
+					Parent root = FXMLLoader.load(getClass().getResource("view/Conventions.fxml"));
+					primaryStage.setTitle("Conventions List");
+					primaryStage.setScene(new Scene(root) );
+					primaryStage.show();
+
 				} catch(IOException e){
 					e.printStackTrace();
 				}
 
-
-				String[] conventionsStringArray;
-
-
-				scene.setRoot(listOfConsGroup);
 			}
 		});
 
@@ -135,9 +140,9 @@ public class GUIControl extends Application{
 
 	}
 
-	// public static void main(String[] args){
-	// 	launch(args);
+	public static void main(String[] args){
+	 	launch(args);
 
-	// }
+	 }
 
 }
