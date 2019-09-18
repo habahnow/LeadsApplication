@@ -1,0 +1,9 @@
+/src/test/
+
+# Default ignored files
+.idea/workspace.xml
+.idea/modules.xml
+
+target/
+
+.class

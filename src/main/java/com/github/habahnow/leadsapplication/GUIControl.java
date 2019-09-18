@@ -1,4 +1,4 @@
-package contactslist;
+package com.github.habahnow.leadsapplication;
 
 import java.io.IOException;
 import java.io.File;
@@ -33,10 +33,9 @@ public class GUIControl extends Application{
 		final Locale enLocale = new Locale("en", "US");
 		final Locale esLocale = new Locale("es", "MX");
 
-		ResourceBundle bundle = ResourceBundle.getBundle("MessageBundle", esLocale);
-
-
-    	//System.out.println("Message in "+ bundle.getString("new"));  
+		ResourceBundle bundle = ResourceBundle.getBundle(
+				"com.github.habahnow.leadsapplication.resources.MessageBundle", esLocale);
+    	//System.out.println("Message in "+ bundle.getString("new"));
 
 		Text mainTitle = new Text(); 
 		mainTitle.setFont(new Font(30));
@@ -90,7 +89,7 @@ public class GUIControl extends Application{
 				//display list of old conventions
 				try {
 					Stream<Path> files = Files.list(Paths.get(
-						"." + File.separator + "Model" + File.separator + 
+						"." + File.separator + "com/github/habahnow/leadsapplication/Model" + File.separator +
 						"Conventions" ));
 					files.forEach(System.out::println);
 

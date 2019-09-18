@@ -1,3 +1,5 @@
+package com.github.habahnow.leadsapplication.Model;
+
 public class Client{
 	private int ID;
 	private String firstName;

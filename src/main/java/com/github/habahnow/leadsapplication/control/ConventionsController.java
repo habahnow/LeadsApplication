@@ -1,4 +1,4 @@
-package contactslist.control;
+package com.github.habahnow.leadsapplication.control;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
