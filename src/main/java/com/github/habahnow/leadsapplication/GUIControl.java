@@ -1,12 +1,7 @@
 package com.github.habahnow.leadsapplication;
 
-import java.io.IOException;
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.*;
 
-import java.util.stream.Stream;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.application.Application;
@@ -88,15 +83,23 @@ public class GUIControl extends Application{
 								
 				//display list of old conventions
 				try {
-					Stream<Path> files = Files.list(Paths.get(
-						"." + File.separator + "com/github/habahnow/leadsapplication/Model" + File.separator +
-						"Conventions" ));
-					files.forEach(System.out::println);
 
-					files.close();
+					String path = File.separator + "resources" + File.separator + "Conventions" + File.separator;
+
+					//TODO: move below steps to a function.
+                    InputStream in = this.getClass().getResourceAsStream(path);
+                    BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+                    String file = br.readLine();
+                    while (file != null){
+                        System.out.println(file);
+                        file = br.readLine();
+                    }
 
 					//open new window
-					Parent root = FXMLLoader.load(getClass().getResource("view/Conventions.fxml"));
+					path = File.separator + "resources" + File.separator + "fxml" + File.separator +
+							"Conventions.fxml";
+					Parent root = FXMLLoader.load(this.getClass().getResource(path));
 					primaryStage.setTitle("Conventions List");
 					primaryStage.setScene(new Scene(root) );
 					primaryStage.show();
