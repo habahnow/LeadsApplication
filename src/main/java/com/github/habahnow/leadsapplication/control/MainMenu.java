@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.File;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static com.github.habahnow.leadsapplication.control.Utilities.getMessageBundle;
@@ -20,6 +20,8 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        final Locale esLocale = new Locale("es", "MX");
 
         String path = toAddress("..", "resources", "fxml"
                 , "main_menu.fxml");
