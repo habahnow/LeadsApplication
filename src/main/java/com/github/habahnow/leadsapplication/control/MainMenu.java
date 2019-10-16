@@ -21,19 +21,20 @@ public class MainMenu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        final Locale esLocale = new Locale("es", "MX");
 
+        //converts string to path/address
         String path = toAddress("..", "resources", "fxml"
                 , "main_menu.fxml");
 
-        ResourceBundle bundle = getMessageBundle();
+        ResourceBundle bundle = CurrentBundle.getCurrentBundle();
 
+        //load the current bundle, and the fxml file
         Parent root = FXMLLoader.load(this.getClass().getResource(path),
                 bundle);
 
         Scene scene = new Scene(root, 600, 600);
 
-        primaryStage.setTitle("Leads Application");
+        primaryStage.setTitle( bundle.getString("applicationName"));
         primaryStage.setScene(scene);
         primaryStage.show();
     }

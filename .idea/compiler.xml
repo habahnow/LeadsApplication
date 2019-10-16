@@ -9,8 +9,8 @@
         <module name="LeadsApplication" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="LeadsApplication" target="1.8" />
+    <bytecodeTargetLevel target="8">
+      <module name="LeadsApplication" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
