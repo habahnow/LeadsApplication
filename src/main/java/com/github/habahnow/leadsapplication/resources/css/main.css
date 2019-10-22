@@ -1,0 +1,18 @@
+.title {
+    -fx-font-size: 2em;
+    -fx-label-padding: 5em;
+    -fx-wrap-text: true;
+}
+
+
+.buttons_container{
+    -fx-spacing: 10px;
+    -fx-padding: 5px;
+}
+
+#mainParent {
+    -fx-grid-lines-visible: "true";
+    -fx-alignment: "center";
+    }
+
+

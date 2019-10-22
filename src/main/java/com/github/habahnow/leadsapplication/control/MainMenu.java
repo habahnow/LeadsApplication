@@ -32,7 +32,7 @@ public class MainMenu extends Application {
         Parent root = FXMLLoader.load(this.getClass().getResource(path),
                 bundle);
 
-        Scene scene = new Scene(root, 600, 600);
+        Scene scene = new Scene(root);
 
         primaryStage.setTitle( bundle.getString("applicationName"));
         primaryStage.setScene(scene);

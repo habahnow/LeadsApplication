@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Text?>
-<GridPane fx:controller="com.github.habahnow.leadsapplication.control.MainMenu"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+<GridPane id="mainParent" stylesheets="@../resources/css/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.habahnow.leadsapplication.control.MainMenu">
 
-    <Text text="%applicationName"
-          GridPane.columnIndex="0" GridPane.rowIndex="0"
-          GridPane.columnSpan="2"/>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label styleClass="title" text="%selection" GridPane.rowIndex="0" />
+      <HBox styleClass="buttons_container" GridPane.rowIndex="1">
+         <children>
+            <Button  text="%old" />
+            <Button  text="%new" />
+            <Button  text="%settings" />
+         </children>
+      </HBox>
+   </children>
 
 </GridPane>
-

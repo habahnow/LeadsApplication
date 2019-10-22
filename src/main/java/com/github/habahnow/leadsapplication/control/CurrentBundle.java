@@ -1,7 +1,5 @@
 package com.github.habahnow.leadsapplication.control;
 
-import org.omg.CORBA.Current;
-
 import java.util.ResourceBundle;
 
 final class CurrentBundle {
